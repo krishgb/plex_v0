@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+    script-src 'self' 'unsafe-eval' https://maps.googleapis.com 'unsafe-inline'; object-src 'self'
+    " />
+    <title>PLEX</title>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 3rem;
+            height: 1.5rem;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: red;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 1rem;
+            width: 1rem;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: green;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px green;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(1.5rem);
+            -ms-transform: translateX(1.5rem);
+            transform: translateX(1.5rem);
+        }
+
+        .slider.round {
+            border-radius: 2rem;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        input[type=number] {
+            width: 3rem;
+            height: 1.5rem;
+            text-align: center;
+            border: none;
+            outline: none;
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            box-shadow: 5px 5px 15px black;
+        }
+    </style>
+</head>
+<body>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <hr>
+    <input type="number" min="1" value="1" />
+
+    <script src="script.js"></script>
+</body>
+</html>

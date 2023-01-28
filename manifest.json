@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Plex",
+    "version": "0.1.0",
+    "description": "Play Videos in PIP mode",
+    "permissions": ["tabs", "storage"],
+    "action": {
+        "default_title": "Plex",
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["./content/content.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "background/background.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["assets/z.mp4"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
