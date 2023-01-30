@@ -3,7 +3,7 @@
     "name": "Plex",
     "version": "0.1.0",
     "description": "Play Videos in PIP mode",
-    "permissions": ["tabs", "storage"],
+    "permissions": ["tabs", "storage", "notifications"],
     "action": {
         "default_title": "Plex",
         "default_popup": "index.html"
